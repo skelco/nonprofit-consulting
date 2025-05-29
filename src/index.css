@@ -1,0 +1,10 @@
+
+@import './App.jsx';
+
+@import './component/Layout.jsx';
+
+@import './views/About.jsx';
+@import './views/Home.jsx';
+@import './views/Contact.jsx';
+@import './views/Privacy.jsx';
+

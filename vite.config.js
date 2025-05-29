@@ -1,17 +1,12 @@
 import { defineConfig } from "vite";
-import viteReact from "@vitejs/plugin-react";
-import { resolve } from "node:path";
+import react from "@vitejs/plugin-react-swc";
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [viteReact()],
-  test: {
-    globals: true,
-    environment: "jsdom",
-  },
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-    },
-  }
+  plugins: [
+    react({
+      jsxImportSource: "react", // ensures jsx transformation work correctly
+      include: ["/*.jsx", "/*.js"], // include .jsx and .js files
+    }),
+  ],
 });
