@@ -1,10 +1,9 @@
+/* @import './root.css'; */
 
-@import './App.jsx';
+/* @import './components/footer.css'; */
+/* @import './components/navbar.css'; */
 
-@import './component/Layout.jsx';
-
-@import './views/About.jsx';
-@import './views/Home.jsx';
-@import './views/Contact.jsx';
-@import './views/Privacy.jsx';
-
+/* @import './views/about/about.css'; */
+/* @import './views/contact/contact.css'; */
+/* @import './views/home/home.css'; */
+/* @import './views/privacy/privacy.css'; */

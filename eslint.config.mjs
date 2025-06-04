@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import reactPlugin from 'eslint-plugin-react';
 import prettier from 'eslint-config-prettier';
 
-/ @type {import("eslint").Linter.FlatConfig[]} /
+/**  @type {import("eslint").Linter.FlatConfig[]} */
 export default [
   {
     ignores: [
@@ -18,6 +18,8 @@ export default [
       '.env',
       'package-lock.json',
       '.prettierrc',
+      'src/routeTree.gen.ts',
+      'eslint.config.mjs',
     ],
   },
   js.configs.recommended,
@@ -31,7 +33,7 @@ export default [
   },
   reactPlugin.configs.flat['jsx-runtime'],
   {
-    files: ['/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: { ...globals.browser, ...globals.node },
