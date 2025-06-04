@@ -1,23 +1,23 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 import {
   Outlet,
   RouterProvider,
   createRootRoute,
   createRoute,
   createRouter,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+} from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
-import './styles.css'
-import reportWebVitals from './reportWebVitals.js'
+import './styles.css';
+import reportWebVitals from './reportWebVitals.js';
 
-import App from './App.jsx'
+import App from './App.jsx';
 
-import Home from './views/Home.jsx'
-import About from './views/About.jsx'
-import Contact from './views/Contact.jsx'
-import Privacy from './views/Privacy.jsx'
+import Home from './views/Home.jsx';
+import About from './views/About.jsx';
+import Contact from './views/Contact.jsx';
+import Privacy from './views/Privacy.jsx';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -26,7 +26,7 @@ const rootRoute = createRootRoute({
       <TanStackRouterDevtools />
     </>
   ),
-})
+});
 
 const homeRoute = createRoute({
   path: '/',
@@ -52,7 +52,12 @@ const privacyRoute = createRoute({
   component: Privacy,
 });
 
-const routeTree = rootRoute.addChildren([homeRoute, aboutRoute,contactRoute,privacyRoute]);
+const routeTree = rootRoute.addChildren([
+  homeRoute,
+  aboutRoute,
+  contactRoute,
+  privacyRoute,
+]);
 
 const router = createRouter({
   routeTree,
@@ -61,19 +66,14 @@ const router = createRouter({
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
-})
+});
 
-const rootElement = document.getElementById('app')
+const rootElement = document.getElementById('app');
 if (rootElement && !rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
+  const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
-    </StrictMode>,
-  )
+    </StrictMode>
+  );
 }
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
